@@ -12,9 +12,6 @@ Descrição curta do projeto.
 ## Funcionalidades
 
 - Listagem de endereços.
-- Pesquisa de endereços por logradouro.
-- Paginação de resultados.
-- etc.
 
 ## Tecnologias utilizadas
 
