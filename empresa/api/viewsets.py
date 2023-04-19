@@ -23,3 +23,24 @@ class EmpresaViewSet(ModelViewSet):
 
         serializer = EmpresaSerializer(empresa)
         return Response(serializer.data)
+    
+    @action(detail=True, methods=['get'])
+    def veiculos(self, request, pk=None):
+        empresa = self.get_object()
+        veiculos = Veiculo.objects.filter(iCod_empresa=empresa)
+
+        paginator = PageNumberPagination()
+        paginator.page_size = 2
+        page = paginator.paginate_queryset(veiculos, request)
+
+        serializer = VeiculoSerializer(page, many=True)
+        empresa_serializer = EmpresaSerializer(empresa)
+
+        return Response({
+            'empresa': empresa_serializer.data,
+            'veiculos': serializer.data,
+            'pagination': {
+                'next': paginator.get_next_link(),
+                'previous': paginator.get_previous_link()
+            }
+        })
