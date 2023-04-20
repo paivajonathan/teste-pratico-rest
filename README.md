@@ -31,6 +31,44 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 8. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
 
+## Todos os endpoints criados
+
+### Endereços
+
+#### Listagem de todos os endereços
+* `http://localhost:8000/endereco/`
+
+#### Listagem de um endereço individual
+* `http://localhost:8000/endereco/{id}/`
+
+### Empresas
+
+#### Listagem de todas as empresas
+* `http://localhost:8000/empresa/`
+
+#### Listagem de uma empresa individual
+* `http://localhost:8000/empresa/{id}/`
+
+#### Listagem de uma empresa por CNPJ
+* `http://localhost:8000/empresa/cnpj/{cnpj}/`
+
+#### Listagem de uma empresa individual por ID, junto de seus veículos
+* `http://localhost:8000/empresa/{id}/veiculos/`
+
+#### Listagem de uma empresa individual por ID/CNPJ, junto de seu endereço
+* `http://localhost:8000/empresa/detalhes/{id_ou_cnpj}`
+
+#### Listagem de todas as empresas a partir de uma parte do nome fantasia
+* `http://localhost:8000/empresa/?search={parte_do_nome}`
+
+### Veículos
+
+#### Listagem de todos os veículos
+* `http://localhost:8000/veiculo/`
+
+#### Listagem de um veículo individual
+* `http://localhost:8000/veiculo/{id}/`
+
 ## Principais tecnologias utilizadas na implementação
 
 - Python 3.11.3
