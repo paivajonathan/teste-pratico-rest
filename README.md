@@ -11,9 +11,10 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 3. Abra o terminal/prompt de comando e navegue até o diretório raiz do projeto.
 
 4. Ative o ambiente virtual Python:
+   <br />
    -> No Windows:
    1. Execute o comando `.\venv\Scripts\activate`.
-   
+   <br />
    -> No Linux:
    1. Execute o comando `python -m venv venv`.
    2. Execute o comando `source venv/bin/activate`.
