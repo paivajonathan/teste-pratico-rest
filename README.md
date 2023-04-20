@@ -11,10 +11,10 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 3. Abra o terminal/prompt de comando e navegue até o diretório raiz do projeto.
 
 4. Ative o ambiente virtual Python:
-   > No Windows:
+   -> No Windows:
    1. Execute o comando `.\venv\Scripts\activate`.
    
-   > No Linux:
+   -> No Linux:
    1. Execute o comando `python -m venv venv`.
    2. Execute o comando `source venv/bin/activate`.
    3. Execute o comando `python -m pip install --upgrade pip`.
@@ -23,8 +23,8 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 5. Instale o MySQL de acordo com o seu S.O. no endereço `https://dev.mysql.com/downloads/mysql/`.
 
 6. Utilize o DDL do banco de dados contido no último tópico deste README.md para recriá-lo.
-  6.1. Obs.: o usuário e senha utilizados serão 'root' e '', respectivamente, por padrão.
-  6.2. Caso queira alterar esse comportamento, altere as informações do dicionário `DATABASES` no arquivo `./nucleo/settings.py`.
+   1. Obs.: o usuário e senha utilizados serão 'root' e '', respectivamente, por padrão.
+   2. Caso queira alterar esse comportamento, altere as informações do dicionário `DATABASES` no arquivo `./nucleo/settings.py`.
 
 7. Execute o comando `python manage.py runserver`.
 
