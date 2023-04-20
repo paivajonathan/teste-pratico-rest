@@ -8,12 +8,15 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.decorators import action
 from rest_framework import status
 from rest_framework.response import Response
-
+from rest_framework.filters import SearchFilter
 
 class EmpresaViewSet(ModelViewSet):
     queryset = Empresa.objects.all()
     serializer_class = EmpresaSerializer
     pagination_class = PageNumberPagination
+
+    filter_backends = (SearchFilter,)
+    search_fields = ['vNome_fantasia']
 
     @action(detail=False, methods=['get'], url_path='cnpj/(?P<cnpj>[^/.]+)')
     def retrieve_by_cnpj(self, request, cnpj=None):
@@ -31,7 +34,7 @@ class EmpresaViewSet(ModelViewSet):
         veiculos = Veiculo.objects.filter(iCod_empresa=empresa).order_by('id')
 
         paginator = PageNumberPagination()
-        paginator.page_size = 2
+        paginator.page_size = self.pagination_class.page_size
         page = paginator.paginate_queryset(veiculos, request)
 
         serializer = VeiculoSerializer(page, many=True)
