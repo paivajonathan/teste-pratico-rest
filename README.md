@@ -21,7 +21,7 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
    3. Execute o comando `python -m pip install --upgrade pip`.
    4. Execute o comando `pip install -r requirements.txt`.
 
-5. Instale o MySQL de acordo com o seu S.O. no endereço `https://dev.mysql.com/downloads/mysql/`.
+5. Instale o MySQL de acordo com o seu S.O. no respectivo [endereço](https://dev.mysql.com/downloads/mysql/).
 
 6. Utilize o DDL do banco de dados contido no último tópico deste README.md para recriá-lo.
    1. Obs.: o usuário e senha utilizados serão 'root' e '', respectivamente, por padrão.
