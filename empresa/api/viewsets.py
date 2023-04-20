@@ -11,7 +11,7 @@ from rest_framework.response import Response
 from rest_framework.filters import SearchFilter
 
 class EmpresaViewSet(ModelViewSet):
-    queryset = Empresa.objects.all()
+    queryset = Empresa.objects.all().order_by('id')
     serializer_class = EmpresaSerializer
     pagination_class = PageNumberPagination
 
