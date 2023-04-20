@@ -1,27 +1,41 @@
 # Teste prático SN Ambiental
 
-Descrição curta do projeto.
+Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em sua implementação, apresentando-se como um dos requisitos para a seleção do estágio na SN Ambiental.
 
 ## Como executar o projeto
 
 1. Faça o download do projeto no GitHub.
-2. Abra o terminal e navegue até o diretório raiz do projeto.
-3. Execute o comando `python manage.py runserver`.
-4. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
 
-## Funcionalidades
+2. Extraia o arquivo compactado.
 
-- Listagem de endereços.
+3. Abra o terminal/prompt de comando e navegue até o diretório raiz do projeto.
 
-## Tecnologias utilizadas
+4. Ative o ambiente virtual Python:
+  ### No Windows:
+  4.1. Execute o comando `.\venv\Scripts\activate`.
+   
+  ### No Linux:
+  4.1. Execute o comando `python -m venv venv`.
+  4.2. Execute o comando `source venv/bin/activate`.
+  4.3. Execute o comando `python -m pip install --upgrade pip`.
+  4.4. Execute o comando `pip install -r requirements.txt`.
+
+5. Instale o MySQL de acordo com o seu S.O. no endereço `https://dev.mysql.com/downloads/mysql/`.
+
+6. Utilize o DDL do banco de dados contido no último tópico deste README.md para recriá-lo.
+  6.1. Obs.: o usuário e senha utilizados serão 'root' e '', respectivamente, por padrão.
+  6.2. Caso queira alterar esse comportamento, altere as informações do dicionário `DATABASES` no arquivo `./nucleo/settings.py`.
+
+7. Execute o comando `python manage.py runserver`.
+
+8. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
+
+## Principais tecnologias utilizadas na implementação
 
 - Python 3.11.3
 - Django 4.2
-- Django REST framework
-- MySQL
-- HTML
-- CSS
-- JavaScript
+- Django REST Framework 3.14.0
+- MySQL Community Server Ver 8.0.32
 
 ## Estrutura do banco de dados
 
