@@ -20,5 +20,5 @@ class UsuarioViewSetTestCase(APITestCase):
             "username": "UsuarioA",
             "password": "A@123"
         }
-        response = self.client.post('/login/', data)
+        response = self.client.post('/login/?next=/', data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
