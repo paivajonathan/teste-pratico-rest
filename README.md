@@ -84,6 +84,18 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 #### Listagem de um veículo individual
 * `http://localhost:8000/veiculo/{id}/`
 
+## Como executar os testes
+
+1. Navegue pelo terminal até o diretório raiz do projeto.
+
+2. Ative o virtualenv (caso não esteja ativo):
+   1. Execute `.\venv\Scripts\activate` (Windows).
+   2. Execute `source linux_venv/bin/activate` (Linux).
+
+3. Execute o comando `python manage.py test`.
+
+4. Assim, todos os testes, contidos nos arquivos `tests.py` de cada app, serão executados.
+
 ## Principais tecnologias utilizadas na implementação
 
 - Python 3.11.3
