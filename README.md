@@ -16,8 +16,8 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
    1. Execute o comando `.\venv\Scripts\activate`.
    
    &rarr; No Linux:
-   1. Execute o comando `python -m venv venv`.
-   2. Execute o comando `source venv/bin/activate`.
+   1. Execute o comando `python -m venv linux_venv`.
+   2. Execute o comando `source linux_venv/bin/activate`.
    3. Execute o comando `python -m pip install --upgrade pip`.
    4. Execute o comando `pip install -r requirements.txt`.
 
