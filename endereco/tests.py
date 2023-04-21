@@ -17,6 +17,11 @@ class EnderecoViewSetTestCase(APITestCase):
         self.client.login(username='superuser', password='12345')
         response = self.client.get('/endereco/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_retrieve_endereco(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/endereco/{self.enderecoA.id}/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_create_endereco(self):
         self.client.login(username='superuser', password='12345')
