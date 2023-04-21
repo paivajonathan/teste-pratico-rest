@@ -5,6 +5,6 @@ from rest_framework.pagination import PageNumberPagination
 
 
 class VeiculoViewSet(ModelViewSet):
-    queryset = Veiculo.objects.all()
+    queryset = Veiculo.objects.all().order_by('id')
     serializer_class = VeiculoSerializer
     pagination_class = PageNumberPagination

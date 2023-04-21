@@ -9,6 +9,9 @@ from rest_framework.decorators import action
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.filters import SearchFilter
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
+from nucleo.api.permissions import IsStaffOrReadOnly
 
 class EmpresaViewSet(ModelViewSet):
     queryset = Empresa.objects.all().order_by('id')
