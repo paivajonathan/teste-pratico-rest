@@ -30,7 +30,7 @@ class EnderecoViewSetTestCase(APITestCase):
             'vComplemento': 'Complemento C', 
             'vBairro': 'Bairro C', 
             'vNumero': '300', 
-            'cUF': 'CE' 
+            'cUF': 'CE'
         }
         response = self.client.post('/endereco/', data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
