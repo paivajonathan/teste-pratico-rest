@@ -2,6 +2,7 @@ from rest_framework.test import APITestCase
 from rest_framework import status
 from endereco.models import Endereco
 from empresa.models import Empresa
+from veiculo.models import Veiculo 
 from django.contrib.auth.models import User
 from rest_framework.test import APIClient
 
@@ -19,9 +20,42 @@ class EnderecoViewSetTestCase(APITestCase):
         self.empresaA = Empresa.objects.create(vNome_fantasia='Empresa A', vNome_razao_social='Empresa A', vCnpj='12345678909876', vEmail='empresaa@gmail.com', vObservacao='Observacao A', iCod_endereco=self.enderecoA)
         self.empresaB = Empresa.objects.create(vNome_fantasia='Empresa B', vNome_razao_social='Empresa B', vCnpj='09876543212345', vEmail='empresab@gmail.com', vObservacao='Observacao B', iCod_endereco=self.enderecoB)
 
+        self.veiculoA = Veiculo.objects.create(vDesc_veiculo='Veiculo A', vPlaca='LXC4Z67', nValor=20000.920, iCod_empresa=self.empresaB)
+        self.veiculoB = Veiculo.objects.create(vDesc_veiculo='Veiculo B', vPlaca='FMG3P75', nValor=10000.990, iCod_empresa=self.empresaB)
+
     def test_list_empresas(self):
         self.client.login(username='superuser', password='12345')
         response = self.client.get('/empresa/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_retrieve_empresa(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/empresa/{self.empresaA.id}/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_retrieve_empresa_by_cnpj(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/empresa/cnpj/{self.empresaA.vCnpj}/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_list_veiculos(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/empresa/{self.empresaB.id}/veiculos/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_retrieve_details_id(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/empresa/detalhes/{self.empresaB.id}/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_retrieve_details_cnpj(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/empresa/detalhes/{self.empresaB.vCnpj}/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_retrieve_empresa_by_part_of_name(self):
+        self.client.login(username='superuser', password='12345')
+        response = self.client.get(f'/empresa/?search={self.empresaB.vNome_fantasia[0:5]}')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_create_empresa(self):
