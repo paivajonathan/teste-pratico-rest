@@ -5,6 +5,6 @@ from rest_framework.pagination import PageNumberPagination
 
 
 class EnderecoViewSet(ModelViewSet):
-    queryset = Endereco.objects.all()
+    queryset = Endereco.objects.all().order_by('id')
     serializer_class = EnderecoSerializer
     pagination_class = PageNumberPagination
