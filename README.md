@@ -33,6 +33,14 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 ## Todos os endpoints criados
 
+### Usuários
+
+#### Cadastrar um usuário
+* `http://localhost:8000/registrar/`
+
+#### Autenticar um usuário
+* `http://localhost:8000/login/?next=/`
+
 ### Endereços
 
 #### Listagem de todos os endereços
