@@ -35,6 +35,13 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 ### Usuários
 
+#### Permissões
+* Usuário não autenticado &rarr; cadastro e login
+* Usuário autenticado &rarr; GET, OPTIONS
+* Usuário Staff/Admin &rarr; GET, OPTIONS, POST, PUT, DELETE
+   1. Para acessar o Admin, utilize Username=admin, Password=12345
+   2. Admin endpoint: `http://localhost:8000/admin/`
+
 #### Cadastrar um usuário
 * `http://localhost:8000/registrar/`
 
