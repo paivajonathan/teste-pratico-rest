@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.pagination import PageNumberPagination
 from veiculo.models import Veiculo
 from veiculo.api.serializers import VeiculoSerializer
-from rest_framework.pagination import PageNumberPagination
 
 
 class VeiculoViewSet(ModelViewSet):
