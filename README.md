@@ -4,6 +4,8 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 ## Como executar o projeto
 
+0. Instale a última versão da linguagem Python de acordo com o seu S.O. (caso ainda não tenha instalado), por meio deste [link](https://www.python.org/downloads/).
+
 1. Faça o download do projeto no GitHub.
 
 2. Extraia o arquivo compactado.
@@ -24,7 +26,7 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 5. Instale o MySQL de acordo com o seu S.O. no respectivo [endereço](https://dev.mysql.com/downloads/mysql/).
 
 6. Utilize o DDL do banco de dados contido no último tópico deste README.md para recriá-lo.
-   1. Obs.: o usuário e senha utilizados serão 'root' e '', respectivamente, por padrão.
+   1. Obs.: o banco de dados, usuário e senha utilizados serão 'db_teste_pratico_rest', 'root' e '', respectivamente, por padrão.
    2. Caso queira alterar esse comportamento, altere as informações do dicionário `DATABASES` no arquivo `./nucleo/settings.py`.
 
 7. Execute o comando `python manage.py runserver`.
