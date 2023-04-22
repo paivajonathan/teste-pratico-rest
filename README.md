@@ -4,15 +4,15 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 ## Como executar o projeto
 
-0. Instale a última versão da linguagem Python de acordo com o seu S.O. (caso ainda não tenha instalado), por meio deste [link](https://www.python.org/downloads/).
+1. Instale a última versão da linguagem Python de acordo com o seu S.O. (caso ainda não tenha instalado), por meio deste [link](https://www.python.org/downloads/).
 
-1. Faça o download do projeto no GitHub.
+2. Faça o download do projeto no GitHub.
 
-2. Extraia o arquivo compactado.
+3. Extraia o arquivo compactado.
 
-3. Abra o terminal/prompt de comando e navegue até o diretório raiz do projeto.
+4. Abra o terminal/prompt de comando e navegue até o diretório raiz do projeto.
 
-4. Ative o ambiente virtual Python:
+5. Ative o ambiente virtual Python:
    <br />
    &rarr; No Windows:
    1. Execute o comando `.\venv\Scripts\activate`.
@@ -20,18 +20,20 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
    &rarr; No Linux:
    1. Execute o comando `python -m venv linux_venv`.
    2. Execute o comando `source linux_venv/bin/activate`.
-   3. Execute o comando `python -m pip install --upgrade pip`.
-   4. Execute o comando `pip install -r requirements.txt`.
 
-5. Instale o MySQL de acordo com o seu S.O. no respectivo [endereço](https://dev.mysql.com/downloads/mysql/).
+6. Atualize o módulo pip com o comando: `python -m pip install --upgrade pip`.
 
-6. Utilize o DDL do banco de dados contido no último tópico deste README.md para recriá-lo.
+7. Instale todas as bibliotecas necessárias com o comando `pip install -r requirements.txt`.
+
+8. Instale o MySQL de acordo com o seu S.O. no respectivo [endereço](https://dev.mysql.com/downloads/mysql/).
+
+9. Com o servidor MySQL ativado, crie todas as tabelas com os comandos `python manage.py makemigrations` e `python manage.py migrate`.
    1. Obs.: o banco de dados, usuário e senha utilizados serão 'db_teste_pratico_rest', 'root' e '', respectivamente, por padrão.
    2. Caso queira alterar esse comportamento, altere as informações do dicionário `DATABASES` no arquivo `./nucleo/settings.py`.
 
-7. Execute o comando `python manage.py runserver`.
+10. Execute o comando `python manage.py runserver`.
 
-8. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
+11. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
 
 ## Todos os endpoints criados
 
@@ -41,7 +43,7 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 * Usuário não autenticado &rarr; cadastro e login
 * Usuário autenticado &rarr; GET, OPTIONS
 * Usuário Staff/Admin &rarr; GET, OPTIONS, POST, PUT, DELETE
-   1. Para acessar o Admin, utilize Username=admin, Password=12345
+   1. Para criar o usuário privilegiado, execute o comando `python manage.py createsuperuser` e insira seu usuário e senha.
    2. Admin endpoint: `http://localhost:8000/admin/`
 
 #### Cadastrar um usuário
