@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.pagination import PageNumberPagination
 from endereco.models import Endereco
 from endereco.api.serializers import EnderecoSerializer
-from rest_framework.pagination import PageNumberPagination
 
 
 class EnderecoViewSet(ModelViewSet):
