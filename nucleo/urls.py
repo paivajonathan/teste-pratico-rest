@@ -20,7 +20,6 @@ from rest_framework import routers
 from endereco.api.viewsets import EnderecoViewSet
 from empresa.api.viewsets import EmpresaViewSet
 from veiculo.api.viewsets import VeiculoViewSet
-from usuario.api.viewsets import UsuarioCreateView
 
 
 router = routers.DefaultRouter()
@@ -32,7 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('', include('rest_framework.urls')),
-    path('registrar/', UsuarioCreateView.as_view(), name='user_create'),
+    path('', include('usuario.urls')),
     path('empresa/<int:pk>/veiculos', EmpresaViewSet.as_view({'get': 'list_veiculos'}), name='list_veiculos'),
     path('empresa/cnpj/<str:cnpj>/', EmpresaViewSet.as_view({'get': 'retrieve_by_cnpj'}), name='retrieve_by_cnpj'),
     path('empresa/detalhes/<str:pk_cnpj>/', EmpresaViewSet.as_view({'get': 'retrieve_details'}), name='retrieve_details'),
