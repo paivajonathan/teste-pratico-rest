@@ -27,13 +27,15 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 8. Instale o MySQL de acordo com o seu S.O. no respectivo [endereço](https://dev.mysql.com/downloads/mysql/).
 
-9. Com o servidor MySQL ativado, crie todas as tabelas com os comandos `python manage.py makemigrations` e `python manage.py migrate`.
-   1. Obs.: o banco de dados, usuário e senha utilizados serão 'db_teste_pratico_rest', 'root' e '', respectivamente, por padrão.
-   2. Caso queira alterar esse comportamento, altere as informações do dicionário `DATABASES` no arquivo `./nucleo/settings.py`.
+9. Com o servidor MySQL ativado, crie a base de dados de acordo com o `'NAME'` especificado no dicionário `DATABASES` no arquivo `./nucleo/settings.py`, ou seja, com o nome `db_teste_pratico_rest` (por padrão).
+   1. Certifique-se de que o nome de seu usuário para acessar o MySQL seja `'root'` e a senha seja `''` (nenhuma).
+   2. Se não for o caso, altere os campos `'USER'` e `'PASSWORD'` no dicionário `DATABASES` do arquivo `./nucleo/settings.py` para receberem as informações corretas. 
 
-10. Execute o comando `python manage.py runserver`.
+10. Crie todas as tabelas com os comandos `python manage.py makemigrations` e `python manage.py migrate`.
 
-11. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
+11. Execute o comando `python manage.py runserver`.
+
+12. Acesse a aplicação em seu navegador no endereço `http://localhost:8000`.
 
 ## Todos os endpoints criados
 
