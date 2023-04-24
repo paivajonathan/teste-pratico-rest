@@ -29,10 +29,8 @@ router.register(r'veiculo', VeiculoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('', include('rest_framework.urls')),
     path('', include('usuario.urls')),
-    path('empresa/<int:pk>/veiculos', EmpresaViewSet.as_view({'get': 'list_veiculos'}), name='list_veiculos'),
-    path('empresa/cnpj/<str:cnpj>/', EmpresaViewSet.as_view({'get': 'retrieve_by_cnpj'}), name='retrieve_by_cnpj'),
-    path('empresa/detalhes/<str:pk_cnpj>/', EmpresaViewSet.as_view({'get': 'retrieve_details'}), name='retrieve_details'),
+    path('', include('rest_framework.urls')),
+    path('', include(router.urls)),
+    path('empresa/', include('empresa.urls')),
 ]
