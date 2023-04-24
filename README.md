@@ -43,8 +43,8 @@ Esta é uma aplicação de API REST, sendo utilizado o Django REST Framework em 
 
 #### Permissões
 * Usuário não autenticado &rarr; cadastro e login
-* Usuário autenticado &rarr; GET, OPTIONS
-* Usuário Staff/Admin &rarr; GET, OPTIONS, POST, PUT, DELETE
+* Usuário autenticado &rarr; apenas leitura
+* Usuário Staff/Admin &rarr; leitura e modificações na api
    1. Para criar o usuário privilegiado, execute o comando `python manage.py createsuperuser` e insira seu usuário e senha.
    2. Admin endpoint: `http://localhost:8000/admin/`
 
